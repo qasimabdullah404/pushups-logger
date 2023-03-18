@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 
@@ -7,8 +8,11 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
+    basedir = os.path.abspath(os.path.dirname(__file__))
+
     app.config["SECRET_KEY"] = "supersecret"
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///push_ups_logger.sqlite"
+    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + \
+        os.path.join(basedir, 'pushups_logger.db')
 
     db.init_app(app)
 
