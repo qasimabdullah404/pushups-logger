@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" action="/new">
+  <div class="form-group mt-2">
+    <label for="pushup">PushUps</label>
+    <input type="number" class="form-control" id="pushups" name="pushups" placeholder="How many pushups did you do?"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea class="form-control" id="comment" name="comment" placeholder="Was it easy?" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Workout</button>
+</form>
+{% endblock %}
