@@ -16,7 +16,7 @@
       {% for workout in workouts %}
       <tr>
         <td>{{ workout.pushups }}</td>
-        <td>{{ workout.date_posted.strftime("%d/%m/%Y, %H:%M:%S") }}</td>
+        <td>{{ workout.date_posted.strftime("%d/%m/%Y, %H:%M") }} UTC</td>
         <td>{{ workout.comment }}</td>
       </tr>
       {% endfor %}
