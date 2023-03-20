@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ user.name }}</h1>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Number of PushUps</th>
+        <th scope="col">Performed At</th>
+        <th scope="col">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for workout in workouts %}
+      <tr>
+        <td>{{ workout.pushups }}</td>
+        <td>{{ workout.date_posted.strftime("%d/%m/%Y, %H:%M") }} UTC</td>
+        <td>{{ workout.comment }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
