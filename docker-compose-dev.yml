@@ -12,6 +12,9 @@ services:
     build: .
     expose:
       - 5000
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://qasim:qasim@db:5432/pushups
+      - SECRET_KEY=supersecret
     depends_on:
       - db
 

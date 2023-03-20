@@ -9,9 +9,10 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
-    app.config["SECRET_KEY"] = "supersecret"
+    app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
 
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://qasim:qasim@db:5432/pushups'
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv(
+        'SQLALCHEMY_DATABASE_URI')
 
     db.init_app(app)
 
