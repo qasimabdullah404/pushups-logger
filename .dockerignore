@@ -1,0 +1,6 @@
+Dockerfile
+env
+__pycache__
+.DS_Store
+pushups_logger.db
+/app/__pycache__
