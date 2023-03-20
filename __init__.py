@@ -9,11 +9,9 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
-    basedir = os.path.abspath(os.path.dirname(__file__))
-
     app.config["SECRET_KEY"] = "supersecret"
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + \
-        os.path.join(basedir, 'pushups_logger.db')
+
+    app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://qasim:qasim@localhost:5434/pushups'
 
     db.init_app(app)
 
